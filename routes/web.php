@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,5 +19,14 @@ Route::get('/', function () {
 });
 
 Route::get('about', function(){
-    return view('about');
+    $name = 'Badran Mohammed';
+    $age = 50;
+
+    // return view('about')->with('name', $name)->with('age', $age);
+    return view('about', compact('name', 'age'));
+});
+
+Route::post('send', function(Request $request){
+    $name = $request->myname;
+    return view('about',compact('name'));
 });
