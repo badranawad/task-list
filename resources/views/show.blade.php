@@ -7,14 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>My name is {{$name}}</h1>
-
-    <form action="send" method="POST">
-        @csrf
-        Name
-        <input type="text" name="myname" id="myname">
-        <input type="submit" value="Send">
-    </form>
-
+    <h1>{{$task}}</h1>
 </body>
 </html>

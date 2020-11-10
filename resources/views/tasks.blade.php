@@ -7,14 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>My name is {{$name}}</h1>
-
-    <form action="send" method="POST">
-        @csrf
-        Name
-        <input type="text" name="myname" id="myname">
-        <input type="submit" value="Send">
-    </form>
-
+    <ul>
+        @foreach($tasks as $id => $task)
+        <li><a href="{{'task/show/' . $id}}"><h3>{{$task}}</h3></a></li>
+        @endforeach
+    </ul>
 </body>
 </html>
