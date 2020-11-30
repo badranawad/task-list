@@ -8,8 +8,8 @@
 </head>
 <body>
     <ul>
-        @foreach($tasks as $id => $task)
-        <li><a href="{{'task/show/' . $id}}"><h3>{{$task}}</h3></a></li>
+        @foreach ($tasks as $task)
+        <li><a href="tasks/show/{{$task->id}}">{{$task->title}}</a></li>
         @endforeach
     </ul>
 </body>
